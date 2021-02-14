@@ -1,3 +1,3 @@
 # Responsible-Encrypted-Chat-Application
 
-Peer.Js
+This project was made with Peer.js technology. 
