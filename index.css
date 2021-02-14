@@ -1,0 +1,59 @@
+#header{
+    text-align: center;
+    background-color: aquamarine;
+    padding: 20px;
+}
+#createChat{
+    width: 250px;
+    height: 150px;
+    margin: 50px;
+    background-color: chartreuse;
+}
+
+#joinChat{
+    width: 250px;
+    height: 150px;
+    margin: 50px;
+    background-color:cornflowerblue;
+}
+
+#info{
+    margin: 5px;
+}
+#state{
+    background-color:crimson;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid;
+}
+body{
+    background-color: aliceblue;
+}
+#receiver-id{
+    height: 30px;
+}
+#connect-button{
+    padding: 8px;
+    background-color: cornflowerblue;
+    border: 1px solid ;
+    position:fixed;
+    right: 10px;
+}
+#message{
+    overflow: scroll;
+}
+
+#interface{
+    bottom:3px;
+    position: fixed;
+}
+#sendMessageBox{
+    height: 30px;
+}
+#sendButton{
+    padding: 10px;
+    background-color: cornflowerblue;
+}
+.msgs{
+	padding: 5px;
+}
