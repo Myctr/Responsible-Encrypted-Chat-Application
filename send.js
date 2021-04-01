@@ -199,11 +199,13 @@
     }
     if (conn && conn.open) {
       var msg = sendMessageBox.value;
-      var degree = 8;
+      //Affine algorith  y = ax+b
+      var a = 9;
+      var b = 1;
       var newMsg = "";
       for (var i = 0; i < msg.length; i++) {
         var char = charToNumber(msg[i]);
-        var password = (Number(char) + Number(degree)) % 76;
+        var password = (Number(char)*Number(a)+Number(b))%76;
         newMsg += numberToChar(password);
       }
       sendMessageBox.value = "";
@@ -228,6 +230,16 @@
 })();
 function solve(msg) {
   msg.removeAttribute("onclick");
+  var a = 9;
+  var b = 1;
+  var key = 0;
+  for(var i=0;i<76;i++){
+    key = (a*i)%76
+    if(key==1){
+      key = i;
+      break;
+    }
+  }
   var alphabet =
     " AaBbCcÇçDdEeFfGgĞğHhIıİiJjKkLlMmNnOoÖöPpQqRrSsŞşTtUuUüVvWwXxYyZz0123456789.";
   function charToNumber(msg) {
@@ -245,12 +257,16 @@ function solve(msg) {
     }
   }
   var password = msg.innerHTML;
-  var degree = 8;
   var newMsg = "";
   for (var i = 0; i < password.length; i++) {
     var char = charToNumber(password[i]);
-    var unpass = (Number(char + 76) - Number(degree)) % 76;
-    newMsg += numberToChar(unpass);
+    var unpass = ((char-b)*key)%76;
+    if(unpass==-17){
+      newMsg += 'X'
+    }else{
+      newMsg += numberToChar(unpass);
+    }
+    
   }
   msg.innerHTML = newMsg;
   msg.style = "border:1px solid green";
